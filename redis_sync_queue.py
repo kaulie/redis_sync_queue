@@ -5,7 +5,6 @@ def simple_sync_queue(queue_key_pattern,req_ttl = 0.5, wait_timeout = 2.0,max_si
         wait_timeout: 单个请求的最大等待时间，默认为2秒
         max_size : 队列的最大请求容量，默认为0，即没有限制
         logger : 使用的logger，如果不设置，则使用系统内置logging  
-        callback : 失败时的回调函数，默认在请求未满足时，返回一个json串，可以支持自定义
         queue_ttl : 队列的生存周期,如果没有设定，0 为不过期,必须为大于0的int值
         queue_expireat: 队列的绝对过期时间,None为不过期
         queue_ttl 与 queue_expireat 同时存在时，以 queue_expireat 设置为准
