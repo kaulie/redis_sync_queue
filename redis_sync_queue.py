@@ -1,3 +1,8 @@
+def __gen_key_factory(key_pattern,arg_names,defaults):
+    def _format(*value):
+        return key_pattern(**dict(zip(arg_names,value)))
+    return _format
+
 def simple_sync_queue(queue_key_pattern,req_ttl = 0.5, wait_timeout = 2.0,max_size=0,logger=None,queue_ttl = 0,queue_expireat=None):
     '''
         queue_key:请求队列key
