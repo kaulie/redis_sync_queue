@@ -1,3 +1,5 @@
+import logging
+
 def __gen_key_factory(key_pattern,arg_names,defaults):
     def _format(*value):
         return key_pattern(**dict(zip(arg_names,value)))
